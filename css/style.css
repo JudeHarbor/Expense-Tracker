@@ -526,3 +526,39 @@ input[type="number"] {
     background-color: #f5f5f5;
     border-radius: 5px;
 }
+
+/* Auth Button Styles */
+#sign-in-btn {
+    background-color: #4285F4; /* Google blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+  }
+  
+  #sign-in-btn:hover {
+    background-color: #3367D6;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+  
+  #sign-in-btn:active {
+    background-color: #2B56B5;
+  }
+  
+  /* Google "G" logo */
+  #sign-in-btn::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3LjY0IDkuMjA0NWgwYy0uMjAzLS4xMDItLjQxOC0uMTk2LS42NDUtLjI4M2gtLjAwOWMtLjIxLS4wODQtLjQzLS4xNTYtLjY2LS4yMTdoLS4wMDZjLS4yMjYtLjA2LS40NjYtLjExLS43MTctLjE0OGgtLjAwN2MtLjI1LS4wMzgtLjUxLS4wNTgtLjc4LS4wNThDOC4yNiA4LjQ5IDAgOS4zNiAwIDEwLjUgMCAxMS42NCA4LjI2IDEyLjUgMTguNDUgMTIuNWMuNTkgMCAxLjEzLS4wNSAxLjY0LS4xNHYtMy4xNTZoLTEuNjR6IiBmaWxsPSIjRkZGIi8+PC9zdmc+');
+    background-size: contain;
+  }
