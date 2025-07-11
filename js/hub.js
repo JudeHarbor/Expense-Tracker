@@ -1,5 +1,6 @@
-import { auth, db, provider } from './firebase-config.js';
+import { signInWithPopup } from "firebase/auth";
 import { collection, query, where, getDocs, doc, deleteDoc, onSnapshot } from "firebase/firestore";
+
 
 const EXPENSE_TYPE_ORDER = {
   'Personal Expenses': 1,
@@ -136,7 +137,7 @@ function renderTrackers(trackers) {
       
       <div class="tracker-footer">
         <div class="tracker-date">Created: ${new Date(tracker.createdAt).toLocaleDateString()}</div>
-        <button class="delete-tracker" onclick="deleteTracker('${tracker.id}')">Delete</button>
+        <button class="delete-tracker" onclick="window.deleteTracker('${tracker.id}')">Delete</button>
       </div>
     `;
 
@@ -170,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAuth();
 });
 
-// Make functions available globally
-window.createNewTracker = createNewTracker;
+export { deleteTracker, createNewTracker };
+
+// Then add this right after the exports:
 window.deleteTracker = deleteTracker;
+window.createNewTracker = createNewTracker;

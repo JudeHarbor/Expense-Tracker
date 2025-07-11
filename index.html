@@ -83,6 +83,10 @@
         </div>
     </div>
 
-    <script type="module" src="js/hub.js"></script>
+    <script type="module">
+        import { deleteTracker, createNewTracker } from './js/hub.js';
+        window.deleteTracker = deleteTracker;
+        window.createNewTracker = createNewTracker;
+      </script>
 </body>
 </html>
