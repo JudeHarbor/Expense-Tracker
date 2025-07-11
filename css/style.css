@@ -562,3 +562,41 @@ input[type="number"] {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3LjY0IDkuMjA0NWgwYy0uMjAzLS4xMDItLjQxOC0uMTk2LS42NDUtLjI4M2gtLjAwOWMtLjIxLS4wODQtLjQzLS4xNTYtLjY2LS4yMTdoLS4wMDZjLS4yMjYtLjA2LS40NjYtLjExLS43MTctLjE0OGgtLjAwN2MtLjI1LS4wMzgtLjUxLS4wNTgtLjc4LS4wNThDOC4yNiA4LjQ5IDAgOS4zNiAwIDEwLjUgMCAxMS42NCA4LjI2IDEyLjUgMTguNDUgMTIuNWMuNTkgMCAxLjEzLS4wNSAxLjY0LS4xNHYtMy4xNTZoLTEuNjR6IiBmaWxsPSIjRkZGIi8+PC9zdmc+');
     background-size: contain;
   }
+
+  /* Add these to your existing style.css */
+.transaction-actions {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .edit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #auth-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
