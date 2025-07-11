@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="js/firebase-config.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>Expensify - Trackers Hub</h2>
+        <div id="auth-container">
+            <div id="user-info" style="display: none;">
+                <span id="user-name"></span>
+                <button id="sign-out-btn" class="btn small-btn">Sign Out</button>
+            </div>
+            <div id="sign-in-container">
+                <button id="sign-in-btn" class="btn small-btn">Sign In with Google</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h1 class="page-title">Welcome to Expensify</h1>
+        <p class="page-subtitle">Choose an expense tracker to get started</p>
+
+        <div class="cards-container">
+            <div class="card" onclick="createNewTracker('Personal Expenses')">
+                <div class="card-icon">💳</div>
+                <h3>Personal Expenses</h3>
+                <p>Track your daily personal spending</p>
+            </div>
+
+            <div class="card" onclick="createNewTracker('Travel Budget')">
+                <div class="card-icon">✈️</div>
+                <h3>Travel Budget</h3>
+                <p>Manage your travel expenses</p>
+            </div>
+
+            <div class="card" onclick="createNewTracker('Business Expenses')">
+                <div class="card-icon">💼</div>
+                <h3>Business Expenses</h3>
+                <p>Track work-related costs</p>
+            </div>
+
+            <div class="card" onclick="createNewTracker('Household Budget')">
+                <div class="card-icon">🏠</div>
+                <h3>Household Budget</h3>
+                <p>Manage family expenses</p>
+            </div>
+        </div>
+
+        <div class="saved-trackers">
+            <div class="hub-row">
+                <h3>Your Saved Trackers</h3>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="date-filter">Filter by Date:</label>
+                        <input type="date" id="date-filter" onchange="applyFilters()">
+                        <button onclick="clearDateFilter()" class="btn small-btn">Clear Date</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="type-filter">Filter by Type:</label>
+                        <select id="type-filter" onchange="applyFilters()">
+                            <option value="all">All Types</option>
+                            <option value="Personal Expenses">Personal Expenses</option>
+                            <option value="Travel Budget">Travel Budget</option>
+                            <option value="Business Expenses">Business Expenses</option>
+                            <option value="Household Budget">Household Budget</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="saved-trackers-container" id="saved-trackers-container">
+                <div class="no-trackers">Please sign in to view your trackers</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/hub.js"></script>
+</body>
+</html>

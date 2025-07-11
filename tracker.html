@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="js/firebase-config.js"></script>
+</head>
+<body>
+    <header>
+        <h2 id="tracker-title">Expensify - Expense Tracker</h2>
+        <div id="auth-container" style="position: absolute; top: 10px; right: 10px;">
+            <div id="user-info" style="display: none;">
+                <span id="user-name" style="color: white; margin-right: 10px;"></span>
+                <button id="sign-out-btn" class="btn small-btn">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h4>Your Balance</h4>
+        <div id="balance-container">
+            <h1 id="balance-display" style="display:none;">₦0.00</h1>
+            <div id="balance-editor" style="display:none;">
+                <input type="number" id="balance-input" placeholder="Enter initial balance">
+                <button id="save-balance-btn" class="btn">Set Balance</button>
+            </div>
+        </div>
+    
+        <div class="inc-exp-container">
+            <div>
+                <h4>Expenses</h4>
+                <p id="money-minus" class="money minus">$0.00</p>
+            </div>
+        </div>
+    
+        <h3>History</h3>
+        <ul id="list" class="list">
+            <!-- Transactions will appear here -->
+        </ul>
+    
+        <div id="form-container">
+            <h3>Add new expense</h3>
+            <form id="form">
+                <div class="form-control">
+                    <label for="text">Expense Name</label>
+                    <input type="text" id="text" placeholder="Enter expense name...">
+                </div>
+        
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount...">
+                </div>
+        
+                <button class="btn">Add Expense</button>
+                <button id="save-tracker-btn" class="btn" style="margin-top: 10px; background-color: #2ecc71;">Save Tracker</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
