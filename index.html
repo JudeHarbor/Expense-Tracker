@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker Hub</title>
-    <base href="/Expense-Tracker/">
-    <link rel="stylesheet" href="/Expense-Tracker/css/style.css?v=1.0">
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script type="module" src="js/firebase-config.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/hub.js"></script>
 </head>
-
 <body>
     <header>
         <h2>Expensify - Trackers Hub</h2>
         <div id="auth-container">
-            <div id="user-info" style="display: none;">
+            <div id="user-info" class="hidden">
                 <span id="user-name"></span>
                 <button id="sign-out-btn" class="btn small-btn">Sign Out</button>
             </div>
@@ -61,13 +57,13 @@
                 <div class="filter-controls">
                     <div class="filter-group">
                         <label for="date-filter">Filter by Date:</label>
-                        <input type="date" id="date-filter" onchange="applyFilters()">
+                        <input type="date" id="date-filter">
                         <button onclick="clearDateFilter()" class="btn small-btn">Clear Date</button>
                     </div>
                     
                     <div class="filter-group">
                         <label for="type-filter">Filter by Type:</label>
-                        <select id="type-filter" onchange="applyFilters()">
+                        <select id="type-filter">
                             <option value="all">All Types</option>
                             <option value="Personal Expenses">Personal Expenses</option>
                             <option value="Travel Budget">Travel Budget</option>
@@ -82,11 +78,5 @@
             </div>
         </div>
     </div>
-
-    <script type="module">
-        import { deleteTracker, createNewTracker } from './js/hub.js';
-        window.deleteTracker = deleteTracker;
-        window.createNewTracker = createNewTracker;
-      </script>
 </body>
 </html>

@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="/Expense-Tracker/css/style.css?v=1.0">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="js/firebase-config.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/hub.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </head>
 <body>
     <header>
         <h2 id="tracker-title">Expensify - Expense Tracker</h2>
         <div id="auth-container" style="position: absolute; top: 10px; right: 10px;">
-            <div id="user-info" style="display: none;">
+            <div id="user-info" class="hidden">
                 <span id="user-name" style="color: white; margin-right: 10px;"></span>
                 <button id="sign-out-btn" class="btn small-btn">Sign Out</button>
             </div>
@@ -23,11 +22,12 @@
     <div class="container">
         <h4>Your Balance</h4>
         <div id="balance-container">
-            <h1 id="balance-display" style="display:none;">₦0.00</h1>
-            <div id="balance-editor" style="display:none;">
+            <h1 id="balance-display" class="hidden">₦0.00</h1>
+            <div id="balance-editor" class="hidden">
                 <input type="number" id="balance-input" placeholder="Enter initial balance">
                 <button id="save-balance-btn" class="btn">Set Balance</button>
             </div>
+            <button id="edit-balance-btn" class="btn hidden">Edit Balance</button>
         </div>
     
         <div class="inc-exp-container">
@@ -60,7 +60,5 @@
             </form>
         </div>
     </div>
-
-    <script type="module" src="js/script.js"></script>
 </body>
 </html>
